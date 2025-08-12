@@ -21,3 +21,7 @@ export const users : User[] = [{
     password : "secret_sauce"
 }];
 
+export const invalidUser = {
+    email : "invalid_user",
+    password : "wrong_password"
+};

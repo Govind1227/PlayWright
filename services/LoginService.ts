@@ -15,4 +15,9 @@ async login(user : User){
     await this.loginPage.goto();
     await this.loginPage.login(user.email, user.password);
 }
+
+getErrorMessageLocator() {
+    return this.page.locator("//h3[@data-test='error']");
+}
+
 }
