@@ -1,4 +1,9 @@
 import {Page, Locator, expect} from '@playwright/test';
+import dotenv from "dotenv"
+
+dotenv.config();
+const loginURL = process.env.loginURL;
+
 
 export class LoginPage{
 readonly page : Page;
@@ -16,7 +21,8 @@ this.assertionText = page.locator("");
 }
 
 async goto(){
-  await this.page.goto("https://www.saucedemo.com/v1/")
+  // ! is used to tell the code that loginURL is not undefined.
+  await this.page.goto(loginURL!)
 }
 
 async login(email : string, password : string){
