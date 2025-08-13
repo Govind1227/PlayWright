@@ -7,7 +7,7 @@ export class CartPage{
 
     constructor(page : Page){
         this.page = page;
-        this.cartButton = page.locator("a.shopping_cart_link.fa-layers.fa-fw");
+        this.cartButton = page.locator('#shopping_cart_container').getByRole('link');
     }
 
 }

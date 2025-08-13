@@ -17,7 +17,7 @@ async login(user : User){
 }
 
 getErrorMessageLocator() {
-    return this.page.locator("//h3[@data-test='error']");
+    return this.page.locator('[data-test="error"]');
 }
 
 async assertionService(){

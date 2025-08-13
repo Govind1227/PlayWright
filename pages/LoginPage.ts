@@ -14,10 +14,10 @@ readonly assertionText : Locator;
 
 constructor (page : Page){
 this.page = page;
-this.emailInput = page.locator("//input[@placeholder='Username']");
-this.passwordInput = page.locator("//input[@placeholder='Password']");
-this.loginbutton = page.locator("//input[@value='LOGIN']");
-this.assertionText = page.locator("a.shopping_cart_link.fa-layers.fa-fw");
+this.emailInput = page.locator('[data-test="username"]');
+this.passwordInput = page.locator('[data-test="password"]');
+this.loginbutton = page.getByRole('button', { name: 'LOGIN' });
+this.assertionText = page.locator('#inventory_filter_container');
 }
 
 async goto(){
@@ -33,6 +33,8 @@ async login(email : string, password : string){
   await this.page.screenshot({path : "Reports/Login.png"});
 }
 async assertion(){
-  await expect(this.assertionText).toBeVisible();
+  await expect(this.assertionText).toContainText('Products');
 }
 }
+
+
