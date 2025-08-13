@@ -20,4 +20,8 @@ getErrorMessageLocator() {
     return this.page.locator("//h3[@data-test='error']");
 }
 
+async assertionService(){
+    this.loginPage.assertion();
+}
+
 }

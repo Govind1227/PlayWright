@@ -5,7 +5,8 @@ import { users,invalidUser } from "../data/UserData";
 test("This is a login test", async({page}) =>{
     const loginService = new LoginService(page);
     for (const user of users){
-        await loginService.login(user)
+        await loginService.login(user);
+        await loginService.assertionService();
     }
 });
 

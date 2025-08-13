@@ -17,7 +17,7 @@ this.page = page;
 this.emailInput = page.locator("//input[@placeholder='Username']");
 this.passwordInput = page.locator("//input[@placeholder='Password']");
 this.loginbutton = page.locator("//input[@value='LOGIN']");
-this.assertionText = page.locator("");
+this.assertionText = page.locator("a.shopping_cart_link.fa-layers.fa-fw");
 }
 
 async goto(){
