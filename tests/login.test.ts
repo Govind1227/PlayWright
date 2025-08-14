@@ -2,7 +2,7 @@ import { expect, test } from "@playwright/test";
 import { LoginService } from "../services/LoginService";
 import { users,invalidUser } from "../data/UserData";
 
-test("This is a login test", async({page}) =>{
+test("This is a Valid login test", async({page}) =>{
     const loginService = new LoginService(page);
     for (const user of users){
         await loginService.login(user);
